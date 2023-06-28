@@ -12,7 +12,7 @@ public class FunkyToss : MonoBehaviour
     public Animation tossAnim;
     public GameObject funky;
     public int player;
-
+    //start
     // Start is called before the first frame update
     void Start()
     {
