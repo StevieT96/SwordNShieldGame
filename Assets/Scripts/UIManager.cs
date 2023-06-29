@@ -74,4 +74,15 @@ public class UIManager : MonoBehaviour
             Prompt.text = "Move: WASD / Arrow Keys\r\n\r\nSlash: B / Left Click (-30)\r\nStab: N / Right Click (-20)\r\nBlock: M / Middle Click (-30)\r\nFumo: H / Right Ctrl (-35)\r\n\r\nReset: Right Shift\r\n\r\nHide/Show This: Backspace";
         }
     }
+
+    /* Add coroutine that when either player dies:
+     *      - Stops player movement
+     *      - Slows down time
+     *      - Plays the final hit noise
+     *      - Waits a few seconds
+     *      - Shows game over text
+     *      - Plays fanfare and crowd cheering sfx
+     *      - Waits a few seconds
+     *      - Gives prompt to reset or go to main menu
+     */ 
 }

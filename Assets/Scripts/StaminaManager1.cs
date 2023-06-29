@@ -23,6 +23,8 @@ public class StaminaManager1 : MonoBehaviour
                 {
                     managerScript.player2Stam += 5;
                 }
+
+                //----If the stamina is equal to 100, play energy full sound----
             }
             yield return new WaitForSeconds(0.3f);
         }

@@ -20,6 +20,7 @@ public class Knockback : MonoBehaviour
         if (managerScript.player2Knock == true)
         {
             m_char2.Translate(Vector3.forward * Time.deltaTime * 50);
+            //----Insert Knockback SFX Here----
         }
     }
 }

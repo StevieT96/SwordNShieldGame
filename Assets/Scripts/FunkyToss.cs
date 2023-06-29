@@ -50,6 +50,7 @@ public class FunkyToss : MonoBehaviour
     IEnumerator Tossing()
     {
         tossAnim.Play("FunkyToss");
+        //----Insert Fumo SFX Here----
         yield return new WaitForSeconds(0.6f);
         funky.GetComponent<Renderer>().enabled = false;
         funky.GetComponent<Collider>().enabled = false;
@@ -64,6 +65,7 @@ public class FunkyToss : MonoBehaviour
     IEnumerator Tossing2()
     {
         tossAnim.Play("FunkyToss");
+        //----Insert Fumo SFX Here----
         yield return new WaitForSeconds(0.6f);
         funky.GetComponent<Renderer>().enabled = false;
         funky.GetComponent<Collider>().enabled = false;
