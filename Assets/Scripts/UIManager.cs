@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     public GameObject gameManager;
     private GameManager managerScript;
+    public GameObject winScreenCamera;
 
     public PropertyMeter stamMeter;
     public PropertyMeter stamMeter2;
@@ -19,6 +21,7 @@ public class UIManager : MonoBehaviour
     public Text Prompt;
 
     private bool promptUp = true;
+
     private void Start()
     {
         managerScript = gameManager.GetComponent<GameManager>();
@@ -51,13 +54,23 @@ public class UIManager : MonoBehaviour
         }
         if (managerScript.gameOver == true && managerScript.player1Health == 0)
         {
-            GameOver.color = Color.red;
-            GameOver.text = "GAME OVER\nP2 Wins!";
+            /*GameOver.color = Color.red;
+            GameOver.text = "GAME OVER\nP2 Wins!";*/
+
+            winScreenCamera.SetActive(true);
+            winScreenCamera.GetComponent<WinScreenChanger>().hasBlueWon = false;
+
+            SceneManager.LoadScene("Win Screen");
         }
         else if (managerScript.gameOver == true && managerScript.player2Health == 0)
         {
-            GameOver.color = Color.blue;
-            GameOver.text = "GAME OVER\nP1 Wins!";
+            /*GameOver.color = Color.blue;
+            GameOver.text = "GAME OVER\nP1 Wins!";*/
+
+            winScreenCamera.SetActive(true);
+            winScreenCamera.GetComponent<WinScreenChanger>().hasBlueWon = true;
+
+            SceneManager.LoadScene("Win Screen");
         }
         else if (managerScript.gameOver == false)
         {

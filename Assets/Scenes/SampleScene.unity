@@ -1006,6 +1006,106 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meterSlider: {fileID: 251491009}
+--- !u!1 &266721692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 266721696}
+  - component: {fileID: 266721695}
+  - component: {fileID: 266721694}
+  - component: {fileID: 266721693}
+  m_Layer: 0
+  m_Name: Win Screen Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &266721693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266721692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b135324d211f84bbc5b4fe6307ff64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasBlueWon: 0
+  redWinScreen: {fileID: 1077723120}
+  blueWinScreen: {fileID: 1052832881}
+--- !u!81 &266721694
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266721692}
+  m_Enabled: 1
+--- !u!20 &266721695
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266721692}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &266721696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266721692}
+  m_LocalRotation: {x: 0.011795974, y: -0.3137926, z: -0.009191367, w: -0.94937384}
+  m_LocalPosition: {x: 0.00000012520394, y: 1.15, z: -1.73}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: -1.614, y: 36.572, z: -359.424}
 --- !u!1 &346195089
 GameObject:
   m_ObjectHideFlags: 0
@@ -4516,6 +4616,37 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1052832880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1052832881}
+  m_Layer: 0
+  m_Name: Blue Win Transform
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1052832881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052832880}
+  m_LocalRotation: {x: 0.014949964, y: 0.3136582, z: -0.0003532427, w: -0.9494182}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1509472609}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -1.614, y: -36.572, z: -359.424}
 --- !u!1 &1063552402
 GameObject:
   m_ObjectHideFlags: 0
@@ -4860,6 +4991,37 @@ Transform:
   m_Father: {fileID: 523537320}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1077723119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1077723120}
+  m_Layer: 0
+  m_Name: Red Win Transform
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1077723120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077723119}
+  m_LocalRotation: {x: 0.011795974, y: -0.3137926, z: -0.009191367, w: -0.94937384}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1509472609}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -1.614, y: 36.572, z: -359.424}
 --- !u!1 &1109366848
 GameObject:
   m_ObjectHideFlags: 0
@@ -5465,8 +5627,6 @@ MonoBehaviour:
   tossAnim: {fileID: 1207438056}
   funky: {fileID: 1207438051}
   player: 2
-  tossS: {fileID: 8300000, guid: 96c145da821e92c4f8f1cbaaeaef3f04, type: 3}
-  audioSource: {fileID: 0}
 --- !u!114 &1207438055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6774,6 +6934,52 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1509472607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1509472609}
+  - component: {fileID: 1509472608}
+  m_Layer: 0
+  m_Name: Win Screen Transforms
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1509472608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509472607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc23b02b2bb43a4fb2fbc5c6eabb0ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1509472609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509472607}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.15, z: -1.73}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1077723120}
+  - {fileID: 1052832881}
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1526796603
 GameObject:
   m_ObjectHideFlags: 0
@@ -8716,6 +8922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1328473090}
+  winScreenCamera: {fileID: 266721692}
   stamMeter: {fileID: 251491010}
   stamMeter2: {fileID: 741728905}
   p1HP: {fileID: 1569639172}
@@ -9049,8 +9256,6 @@ MonoBehaviour:
   tossAnim: {fileID: 9047022497289227028}
   funky: {fileID: 4713421900592389647}
   player: 1
-  tossS: {fileID: 8300000, guid: 96c145da821e92c4f8f1cbaaeaef3f04, type: 3}
-  audioSource: {fileID: 0}
 --- !u!114 &9047022497289227027
 MonoBehaviour:
   m_ObjectHideFlags: 0
