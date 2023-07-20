@@ -6,6 +6,11 @@ public class StaminaManager1 : MonoBehaviour
 {
     public GameObject gameManager;
     private GameManager managerScript;
+
+    private bool isRecharging;
+
+    [SerializeField] private AudioSource redAudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +27,14 @@ public class StaminaManager1 : MonoBehaviour
                 if (managerScript.player2Stam <= 95)
                 {
                     managerScript.player2Stam += 5;
+                    isRecharging = true;
                 }
 
-                //----If the stamina is equal to 100, play energy full sound----
+                if (isRecharging && managerScript.player2Stam == 100)
+                {
+                    redAudioSource.Play();
+                    isRecharging = false;
+                }
             }
             yield return new WaitForSeconds(0.3f);
         }
