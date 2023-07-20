@@ -19371,7 +19371,7 @@ MonoBehaviour:
   m_MinValue: -40
   m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: -7
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -20697,7 +20697,7 @@ MonoBehaviour:
   m_MinValue: -40
   m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: -0
+  m_Value: -7
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
