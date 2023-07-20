@@ -1,24 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SettingsSaver : MonoBehaviour
 {
-    public Slider SFXSlider;
-    public Slider musicSlider;
-        
-    private float SFXValue;
-    private float musicValue;
+    public AudioMixer audioMixer;
+    public string audioType;
 
-    private void Awake()
+    private void Start()
     {
-        DontDestroyOnLoad(this);
+        float soundLevel;
+        audioMixer.GetFloat(audioType, out soundLevel);
+        this.GetComponent<Slider>().value = soundLevel;
     }
 
-    void Update()
+    public void SetSound(float soundLevel)
     {
-        SFXValue = SFXSlider.value;
-        musicValue = musicSlider.value;
+        audioMixer.SetFloat(audioType, soundLevel);
     }
 }
