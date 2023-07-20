@@ -8,7 +8,6 @@ public class UIManager : MonoBehaviour
 {
     public GameObject gameManager;
     private GameManager managerScript;
-    public GameObject winScreenCamera;
 
     public PropertyMeter stamMeter;
     public PropertyMeter stamMeter2;
@@ -57,20 +56,14 @@ public class UIManager : MonoBehaviour
             /*GameOver.color = Color.red;
             GameOver.text = "GAME OVER\nP2 Wins!";*/
 
-            winScreenCamera.SetActive(true);
-            winScreenCamera.GetComponent<WinScreenChanger>().hasBlueWon = false;
-
-            SceneManager.LoadScene("Win Screen");
+            StartCoroutine(gameManager.GetComponent<FinalBlowManager>().FinalBlow(false));
         }
         else if (managerScript.gameOver == true && managerScript.player2Health == 0)
         {
             /*GameOver.color = Color.blue;
             GameOver.text = "GAME OVER\nP1 Wins!";*/
-
-            winScreenCamera.SetActive(true);
-            winScreenCamera.GetComponent<WinScreenChanger>().hasBlueWon = true;
-
-            SceneManager.LoadScene("Win Screen");
+            
+            StartCoroutine(gameManager.GetComponent<FinalBlowManager>().FinalBlow(true));
         }
         else if (managerScript.gameOver == false)
         {
@@ -87,15 +80,4 @@ public class UIManager : MonoBehaviour
             Prompt.text = "Move: WASD / Arrow Keys\r\n\r\nSlash: B / Left Click (-30)\r\nStab: N / Right Click (-20)\r\nBlock: M / Middle Click (-30)\r\nFumo: H / Right Ctrl (-35)\r\n\r\nReset: Right Shift\r\n\r\nHide/Show This: Backspace";
         }
     }
-
-    /* Add coroutine that when either player dies:
-     *      - Stops player movement
-     *      - Slows down time
-     *      - Plays the final hit noise
-     *      - Waits a few seconds
-     *      - Shows game over text
-     *      - Plays fanfare and crowd cheering sfx
-     *      - Waits a few seconds
-     *      - Gives prompt to reset or go to main menu
-     */ 
 }
