@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
 
     private bool promptUp = true;
 
+    private bool hasPlayedFinalBlow;
+
     private void Start()
     {
         managerScript = gameManager.GetComponent<GameManager>();
@@ -56,14 +58,22 @@ public class UIManager : MonoBehaviour
             /*GameOver.color = Color.red;
             GameOver.text = "GAME OVER\nP2 Wins!";*/
 
-            StartCoroutine(gameManager.GetComponent<FinalBlowManager>().FinalBlow(false));
+            if (!hasPlayedFinalBlow)
+            {
+                gameManager.GetComponent<FinalBlowManager>().FinalBlow(false);
+                hasPlayedFinalBlow = true;
+            }
         }
         else if (managerScript.gameOver == true && managerScript.player2Health == 0)
         {
             /*GameOver.color = Color.blue;
             GameOver.text = "GAME OVER\nP1 Wins!";*/
-            
-            StartCoroutine(gameManager.GetComponent<FinalBlowManager>().FinalBlow(true));
+
+            if (!hasPlayedFinalBlow)
+            {
+                gameManager.GetComponent<FinalBlowManager>().FinalBlow(true);
+                hasPlayedFinalBlow = true;
+            }
         }
         else if (managerScript.gameOver == false)
         {

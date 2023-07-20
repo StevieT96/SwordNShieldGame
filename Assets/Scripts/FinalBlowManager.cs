@@ -12,9 +12,15 @@ public class FinalBlowManager : MonoBehaviour
     public GameObject redAudioSources;
     public GameObject redMetaAudioSources;
     public GameObject winScreenCamera;
+
+    private bool finalBlowActive;
+    private bool blueHasWonReference;
     
-    public IEnumerator FinalBlow(bool blueHasWon)
+    public void FinalBlow(bool blueHasWon)
     {
+        finalBlowActive = true;
+        blueHasWonReference = blueHasWon;
+        
         battleMusicSource.Stop();
         blueAudioSources.SetActive(false);
         blueMetaAudioSources.SetActive(false);
@@ -22,13 +28,22 @@ public class FinalBlowManager : MonoBehaviour
         redMetaAudioSources.SetActive(false);
 
         finalBlowSource.Play();
-        
-        yield return new WaitForSeconds(1f);
 
-        winScreenCamera.SetActive(true);
-        winScreenCamera.GetComponent<WinScreenChanger>().hasBlueWon = blueHasWon;
+        Debug.Log("Sounds Done!");
+    }
 
-        SceneManager.LoadScene("Win Screen");
+    private void Update()
+    {
+        if (finalBlowActive)
+        {
+            if (!finalBlowSource.isPlaying)
+            {
+                winScreenCamera.SetActive(true);
+                winScreenCamera.GetComponent<WinScreenChanger>().hasBlueWon = blueHasWonReference;
+
+                SceneManager.LoadScene("Win Screen");
+            }
+        }
     }
 
     /* Add coroutine that when either player dies:
