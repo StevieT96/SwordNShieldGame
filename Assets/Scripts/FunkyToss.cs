@@ -13,6 +13,8 @@ public class FunkyToss : MonoBehaviour
     public GameObject funky;
     public int player;
 
+    public AudioSource fumoThrowSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +52,7 @@ public class FunkyToss : MonoBehaviour
     IEnumerator Tossing()
     {
         tossAnim.Play("FunkyToss");
-        //----Insert Fumo SFX Here----
+        fumoThrowSource.Play();
         yield return new WaitForSeconds(0.6f);
         funky.GetComponent<Renderer>().enabled = false;
         funky.GetComponent<Collider>().enabled = false;
@@ -65,7 +67,7 @@ public class FunkyToss : MonoBehaviour
     IEnumerator Tossing2()
     {
         tossAnim.Play("FunkyToss");
-        //----Insert Fumo SFX Here----
+        fumoThrowSource.Play();
         yield return new WaitForSeconds(0.6f);
         funky.GetComponent<Renderer>().enabled = false;
         funky.GetComponent<Collider>().enabled = false;
