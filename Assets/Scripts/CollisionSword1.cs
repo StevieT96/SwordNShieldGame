@@ -19,6 +19,8 @@ public class CollisionSword1 : MonoBehaviour
 
     public int player; // Assigned in Unity editor as either 1 or 2 depending on whose sword this script is attached to.
 
+    [SerializeField] private AudioSource knockbackSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -120,6 +122,7 @@ public class CollisionSword1 : MonoBehaviour
     //The following IEnumerators are all knockback and stun timing sequences for the various checks performed above.
     IEnumerator Knockback1()
     {
+        knockbackSource.Play();
         yield return new WaitForSeconds(0.333f);
         managerScript.player1Knock = false;
         yield return new WaitForSeconds(0.2f);
@@ -129,6 +132,7 @@ public class CollisionSword1 : MonoBehaviour
     }
     IEnumerator Knockback2()
     {
+        knockbackSource.Play();
         yield return new WaitForSeconds(0.333f);
         managerScript.player2Knock = false;
         yield return new WaitForSeconds(0.2f);

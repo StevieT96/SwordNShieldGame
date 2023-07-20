@@ -8,6 +8,9 @@ public class Knockback : MonoBehaviour
     private GameManager managerScript;
 
     public Transform m_char2;
+
+    [SerializeField] private AudioSource knockbackSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +23,7 @@ public class Knockback : MonoBehaviour
         if (managerScript.player2Knock == true)
         {
             m_char2.Translate(Vector3.forward * Time.deltaTime * 50);
-            //----Insert Knockback SFX Here----
+            knockbackSource.Play();
         }
     }
 }
