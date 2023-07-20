@@ -5,10 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class FinalBlowManager : MonoBehaviour
 {
+    public AudioSource battleMusicSource;
+    public AudioSource finalBlowSource;
+    public GameObject blueAudioSources;
+    public GameObject blueMetaAudioSources;
+    public GameObject redAudioSources;
+    public GameObject redMetaAudioSources;
     public GameObject winScreenCamera;
     
     public IEnumerator FinalBlow(bool blueHasWon)
     {
+        battleMusicSource.Stop();
+        blueAudioSources.SetActive(false);
+        blueMetaAudioSources.SetActive(false);
+        redAudioSources.SetActive(false);
+        redMetaAudioSources.SetActive(false);
+
+        finalBlowSource.Play();
+        
         yield return new WaitForSeconds(1f);
 
         winScreenCamera.SetActive(true);
