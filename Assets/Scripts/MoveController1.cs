@@ -43,7 +43,7 @@ public class MoveController1 : MonoBehaviour
                 StartCoroutine(SwingTime2());
             }
 
-            if (managerScript.player1Busy == false && Input.GetKeyDown(swing) && managerScript.player2Stam <= 30)
+            if (managerScript.player1Busy == false && Input.GetKeyDown(swing) && managerScript.player2Stam < 30)
             {
                 NoEnergy.Play();
             }
@@ -58,7 +58,7 @@ public class MoveController1 : MonoBehaviour
                 StartCoroutine(StabTime2());
             }
 
-            if (managerScript.player1Busy == false && Input.GetKeyDown(stab) && managerScript.player2Stam <= 30)
+            if (managerScript.player1Busy == false && Input.GetKeyDown(stab) && managerScript.player2Stam < 30)
             {
                 NoEnergy.Play();
             }
@@ -74,7 +74,7 @@ public class MoveController1 : MonoBehaviour
                 StartCoroutine(BlockTime2());
             }
 
-            if (managerScript.player1Busy == false && Input.GetKeyDown(block) && managerScript.player2Stam <= 30)
+            if (managerScript.player1Busy == false && Input.GetKeyDown(block) && managerScript.player2Stam < 30)
             {
                 NoEnergy.Play();
             }
