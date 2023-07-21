@@ -8,6 +8,7 @@ public class ExitPauseMenu : MonoBehaviour
 {
     public GameObject gameUIParent;
     public GameObject pauseScreenParent;
+    public GameObject gameManager;
     public AudioMixer audioMixer;
     public bool isExitButton;
     
@@ -17,6 +18,8 @@ public class ExitPauseMenu : MonoBehaviour
         gameUIParent.SetActive(true);
         pauseScreenParent.SetActive(false);
         audioMixer.SetFloat("MusicLowpass", 22000.00f);
+
+        gameManager.GetComponent<PauseMenu>().menuOpen = false;
 
         if (isExitButton)
         {

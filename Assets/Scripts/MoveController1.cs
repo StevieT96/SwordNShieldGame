@@ -29,7 +29,9 @@ public class MoveController1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (managerScript.gameOver == false)
+        bool menuOpenReferenced = gameManager.GetComponent<PauseMenu>().menuOpen;
+
+        if (managerScript.gameOver == false && !menuOpenReferenced)
         {
             if (managerScript.player2Busy == false && Input.GetKeyDown(swing) && managerScript.player2Stam >= 30)
             {
@@ -40,14 +42,12 @@ public class MoveController1 : MonoBehaviour
                 sword.GetComponent<Collider>().enabled = true;
                 StartCoroutine(SwingTime2());
             }
-            {
-                if (managerScript.player1Busy == false && Input.GetKeyDown(swing) && managerScript.player2Stam <= 30)
-                {
-                    NoEnergy.Play();
-                }
-;
 
+            if (managerScript.player1Busy == false && Input.GetKeyDown(swing) && managerScript.player2Stam <= 30)
+            {
+                NoEnergy.Play();
             }
+
             if (managerScript.player2Busy == false && Input.GetKeyDown(stab) && managerScript.player2Stam >= 20)
             {
                 managerScript.player2Busy = true;
@@ -57,14 +57,12 @@ public class MoveController1 : MonoBehaviour
                 sword.GetComponent<Collider>().enabled = true;
                 StartCoroutine(StabTime2());
             }
-            {
-                if (managerScript.player1Busy == false && Input.GetKeyDown(stab) && managerScript.player2Stam <= 30)
-                {
-                    NoEnergy.Play();
-                }
-;
 
+            if (managerScript.player1Busy == false && Input.GetKeyDown(stab) && managerScript.player2Stam <= 30)
+            {
+                NoEnergy.Play();
             }
+
             if (managerScript.player2Busy == false && Input.GetKeyDown(block) && managerScript.player2Stam >= 30)
             {
                 managerScript.player2Busy = true;
@@ -75,13 +73,10 @@ public class MoveController1 : MonoBehaviour
                 sword.GetComponent<Collider>().enabled = true;
                 StartCoroutine(BlockTime2());
             }
-            {
-                if (managerScript.player1Busy == false && Input.GetKeyDown(block) && managerScript.player2Stam <= 30)
-                {
-                    NoEnergy.Play();
-                }
-;
 
+            if (managerScript.player1Busy == false && Input.GetKeyDown(block) && managerScript.player2Stam <= 30)
+            {
+                NoEnergy.Play();
             }
         }        
     }

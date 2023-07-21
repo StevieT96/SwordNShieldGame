@@ -352,6 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameUIParent: {fileID: 749820594}
   pauseScreenParent: {fileID: 1738492488}
+  gameManager: {fileID: 1328473090}
   audioMixer: {fileID: 24100000, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
   isExitButton: 0
 --- !u!114 &86671797
@@ -8313,6 +8314,7 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
   gameUIObject: {fileID: 749820594}
   pauseScreenObject: {fileID: 1738492488}
+  menuOpen: 0
 --- !u!1 &1334020244
 GameObject:
   m_ObjectHideFlags: 0
@@ -9809,6 +9811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameUIParent: {fileID: 749820594}
   pauseScreenParent: {fileID: 1738492488}
+  gameManager: {fileID: 1328473090}
   audioMixer: {fileID: 24100000, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
   isExitButton: 1
 --- !u!114 &1685630847
