@@ -23,6 +23,7 @@ public class CollisionSword1 : MonoBehaviour
     [SerializeField] private AudioSource damageHitHighSource;
     [SerializeField] private AudioSource damageHitMidSource;
     [SerializeField] private AudioSource damageHitLowSource;
+    [SerializeField] private AudioSource swordHitBlockSource;
 
     bool hasPlayedHighBlue = false;
     bool hasPlayedHighRed = false;
@@ -102,6 +103,7 @@ public class CollisionSword1 : MonoBehaviour
         // The following two if statements perform sound, knockback, STUN, etc. for when a player sword hits an opponent's shield (which is actually a blue sword).
         if (other.gameObject.tag == "Sword" && other.gameObject.GetComponent<MeshRenderer>().material.color == Color.blue && gameObject.GetComponent<MeshRenderer>().material.color == Color.white && player == 1)
         {
+            swordHitBlockSource.Play();
             managerScript.player1Busy = true;
             sword1.GetComponent<Renderer>().enabled = false;
             sword1.GetComponent<Collider>().enabled = false;
@@ -111,6 +113,7 @@ public class CollisionSword1 : MonoBehaviour
         }
         if (other.gameObject.tag == "Sword" && other.gameObject.GetComponent<MeshRenderer>().material.color == Color.blue && gameObject.GetComponent<MeshRenderer>().material.color == Color.white && player == 2)
         {
+            swordHitBlockSource.Play();
             managerScript.player2Busy = true;
             sword2.GetComponent<Renderer>().enabled = false;
             sword2.GetComponent<Collider>().enabled = false;
@@ -118,61 +121,8 @@ public class CollisionSword1 : MonoBehaviour
             managerScript.player2Stun = true;
             StartCoroutine(KnockbackB2());
         }
-        
-        if (!hasPlayedHighBlue || !hasPlayedHighRed)
-        {
-            if (managerScript.player1Health == 2)
-            {
-                damageHitHighSource.Play();
-                hasPlayedHighBlue = true;
-            }
 
-            if (managerScript.player2Health == 2)
-            {
-                damageHitHighSource.Play();
-                hasPlayedHighRed = true;
-            }
-        }
-
-        if (!hasPlayedMidBlue || !hasPlayedMidRed)
-        {
-            if (managerScript.player1Health == 1)
-            {
-                damageHitMidSource.Play();
-                hasPlayedMidBlue = true;
-            }
-
-            if (managerScript.player2Health == 1)
-            {
-                damageHitMidSource.Play();
-                hasPlayedMidRed = true;
-            }
-        }
-
-        if (!hasPlayedLowBlue || !hasPlayedLowRed)
-        {
-            if (managerScript.player1Health == 0)
-            {
-                damageHitLowSource.Play();
-                hasPlayedLowBlue = true;
-            }
-
-            if (managerScript.player2Health == 0)
-            {
-                damageHitLowSource.Play();
-                hasPlayedLowRed = true;
-            }
-        }
-
-        if (managerScript.player1Health == 1 && !hasPlayedHighBlue || managerScript.player1Health == 1 && !hasPlayedHighRed)
-        {
-            damageHitMidSource.Play();
-        }
-
-        if (managerScript.player1Health == 0 && !hasPlayedHighBlue || managerScript.player1Health == 0 && !hasPlayedHighRed)
-        {
-            damageHitLowSource.Play();
-        }
+        PlayHitSoundCheck();
 
         // The following two if statements check if either player is dead, triggering a Game Over.
         if (managerScript.player1Health == 0)
@@ -231,5 +181,53 @@ public class CollisionSword1 : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         managerScript.player2Busy = false;
         managerScript.player2Stun = false;
+    }
+
+    public void PlayHitSoundCheck()
+    {
+        if (!hasPlayedHighBlue || !hasPlayedHighRed)
+        {
+            if (managerScript.player1Health == 2)
+            {
+                damageHitHighSource.Play();
+                hasPlayedHighBlue = true;
+            }
+
+            if (managerScript.player2Health == 2)
+            {
+                damageHitHighSource.Play();
+                hasPlayedHighRed = true;
+            }
+        }
+
+        if (!hasPlayedMidBlue || !hasPlayedMidRed)
+        {
+            if (managerScript.player1Health == 1)
+            {
+                damageHitMidSource.Play();
+                hasPlayedMidBlue = true;
+            }
+
+            if (managerScript.player2Health == 1)
+            {
+                damageHitMidSource.Play();
+                hasPlayedMidRed = true;
+            }
+        }
+
+        if (!hasPlayedLowBlue || !hasPlayedLowRed)
+        {
+            if (managerScript.player1Health == 0)
+            {
+                damageHitLowSource.Play();
+                hasPlayedLowBlue = true;
+            }
+
+            if (managerScript.player2Health == 0)
+            {
+                damageHitLowSource.Play();
+                hasPlayedLowRed = true;
+            }
+        }
     }
 }

@@ -9,6 +9,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class FunkyCollision : MonoBehaviour
 {
     public GameObject gameManager;
+    public GameObject respectiveSwordObject;
     private GameManager managerScript;
 
     public GameObject sword1;
@@ -18,6 +19,8 @@ public class FunkyCollision : MonoBehaviour
     public GameObject player2;
 
     public int player; // Assigned in Unity editor as either 1 or 2 depending on whose sword this script is attached to.
+
+    public AudioSource fumoHitSource;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,7 @@ public class FunkyCollision : MonoBehaviour
             {
                 managerScript.player2Health -= 1;
             }
+            fumoHitSource.Play();
             managerScript.roundActive = false;
             managerScript.player1Busy = true;
             managerScript.player2Busy = true;
@@ -50,6 +54,7 @@ public class FunkyCollision : MonoBehaviour
             {
                 managerScript.player1Health -= 1;
             }
+            fumoHitSource.Play();
             managerScript.roundActive = false;
             managerScript.player1Busy = true;
             managerScript.player2Busy = true;
@@ -82,6 +87,8 @@ public class FunkyCollision : MonoBehaviour
             managerScript.roundActive = false;
             managerScript.gameOver = true;
         }
+
+        respectiveSwordObject.GetComponent<CollisionSword1>().PlayHitSoundCheck();
     }
     //The following IEnumerators are all knockback and stun timing sequences for the various checks performed above.
     IEnumerator KnockbackS()
