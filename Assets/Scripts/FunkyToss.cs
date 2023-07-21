@@ -26,7 +26,9 @@ public class FunkyToss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (managerScript.gameOver == false)
+        bool menuOpenReference = gameManager.GetComponent<PauseMenu>().menuOpen;
+        
+        if (managerScript.gameOver == false && !menuOpenReference)
         {
             if (managerScript.player1Busy == false && Input.GetKeyDown(toss) && managerScript.player1Stam >= 35 && player == 1)
        
