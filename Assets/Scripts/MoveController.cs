@@ -14,6 +14,10 @@ public class MoveController : MonoBehaviour
     public GameObject sword;
     public AudioSource NoEnergy;
 
+    public AudioSource stabSource;
+    public AudioSource swingSource;
+    public AudioSource blockSource;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -86,6 +90,7 @@ public class MoveController : MonoBehaviour
     IEnumerator SwingTime1()
     {
         swingAnim.Play("Swing");
+        swingSource.Play();
         yield return new WaitForSeconds(0.333f);
         sword.GetComponent<Renderer>().enabled = false;
         sword.GetComponent<Collider>().enabled = false;
@@ -99,6 +104,7 @@ public class MoveController : MonoBehaviour
     IEnumerator StabTime1()
     {
         swingAnim.Play("Stab");
+        stabSource.Play();
         yield return new WaitForSeconds(0.2f);
         sword.GetComponent<Renderer>().enabled = false;
         sword.GetComponent<Collider>().enabled = false;
@@ -112,6 +118,7 @@ public class MoveController : MonoBehaviour
     IEnumerator BlockTime1()
     {
         swingAnim.Play("Block");
+        blockSource.Play();
         yield return new WaitForSeconds(0.3f);
         sword.GetComponent<Renderer>().enabled = false;
         sword.GetComponent<Collider>().enabled = false;
