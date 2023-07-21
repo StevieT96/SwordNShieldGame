@@ -12,6 +12,7 @@ public class MoveController1 : MonoBehaviour
     public KeyCode block;
     public Animation swingAnim;
     public GameObject sword;
+    public AudioSource NoEnergy;
 
     // Start is called before the first frame update
     private void Start()
@@ -35,6 +36,14 @@ public class MoveController1 : MonoBehaviour
                 sword.GetComponent<Collider>().enabled = true;
                 StartCoroutine(SwingTime2());
             }
+            {
+                if (managerScript.player1Busy == false && Input.GetKeyDown(swing) && managerScript.player2Stam <= 30)
+                {
+                    NoEnergy.Play();
+                }
+;
+
+            }
             if (managerScript.player2Busy == false && Input.GetKeyDown(stab) && managerScript.player2Stam >= 20)
             {
                 managerScript.player2Busy = true;
@@ -43,6 +52,14 @@ public class MoveController1 : MonoBehaviour
                 sword.GetComponent<Renderer>().enabled = true;
                 sword.GetComponent<Collider>().enabled = true;
                 StartCoroutine(StabTime2());
+            }
+            {
+                if (managerScript.player1Busy == false && Input.GetKeyDown(stab) && managerScript.player2Stam <= 30)
+                {
+                    NoEnergy.Play();
+                }
+;
+
             }
             if (managerScript.player2Busy == false && Input.GetKeyDown(block) && managerScript.player2Stam >= 30)
             {
@@ -53,6 +70,14 @@ public class MoveController1 : MonoBehaviour
                 sword.GetComponent<Renderer>().enabled = true;
                 sword.GetComponent<Collider>().enabled = true;
                 StartCoroutine(BlockTime2());
+            }
+            {
+                if (managerScript.player1Busy == false && Input.GetKeyDown(block) && managerScript.player2Stam <= 30)
+                {
+                    NoEnergy.Play();
+                }
+;
+
             }
         }        
     }

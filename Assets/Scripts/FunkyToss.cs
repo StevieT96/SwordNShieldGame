@@ -13,7 +13,7 @@ public class FunkyToss : MonoBehaviour
     public GameObject funky;
     public int player;
 
-    public AudioSource fumoThrowSource;
+    public AudioSource fumoThrowSource, NoEnergySource;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +29,7 @@ public class FunkyToss : MonoBehaviour
         if (managerScript.gameOver == false)
         {
             if (managerScript.player1Busy == false && Input.GetKeyDown(toss) && managerScript.player1Stam >= 35 && player == 1)
+       
             {
                 managerScript.player1Busy = true;
                 managerScript.player1Swing = true;
@@ -36,6 +37,13 @@ public class FunkyToss : MonoBehaviour
                 funky.GetComponent<Renderer>().enabled = true;
                 funky.GetComponent<Collider>().enabled = true;
                 StartCoroutine(Tossing());
+             
+            }
+            {
+                if (managerScript.player1Busy == false && Input.GetKeyDown(toss) && managerScript.player1Stam <= 35 && player == 1)
+                {
+                    NoEnergySource.Play();
+                }
             }
             if (managerScript.player2Busy == false && Input.GetKeyDown(toss2) && managerScript.player2Stam >= 35 && player == 2)
             {
@@ -45,6 +53,12 @@ public class FunkyToss : MonoBehaviour
                 funky.GetComponent<Renderer>().enabled = true;
                 funky.GetComponent<Collider>().enabled = true;
                 StartCoroutine(Tossing2());
+            }
+            {
+                if (managerScript.player2Busy == false && Input.GetKeyDown(toss2) && managerScript.player2Stam <= 35 && player == 2)
+                {
+                    NoEnergySource.Play();
+                }
             }
         }
     }
