@@ -20,6 +20,16 @@ public class CollisionSword1 : MonoBehaviour
     public int player; // Assigned in Unity editor as either 1 or 2 depending on whose sword this script is attached to.
 
     [SerializeField] private AudioSource knockbackSource;
+    [SerializeField] private AudioSource damageHitHighSource;
+    [SerializeField] private AudioSource damageHitMidSource;
+    [SerializeField] private AudioSource damageHitLowSource;
+
+    bool hasPlayedHighBlue = false;
+    bool hasPlayedHighRed = false;
+    bool hasPlayedMidBlue = false;
+    bool hasPlayedMidRed = false;
+    bool hasPlayedLowBlue = false;
+    bool hasPlayedLowRed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +39,7 @@ public class CollisionSword1 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         // The following two if statements perform damage, round active state update, sound, knockback, etc. for when a player weapon hits a player.
         if (other.gameObject.tag == "Player2" && player == 1)
         {
@@ -107,6 +118,62 @@ public class CollisionSword1 : MonoBehaviour
             managerScript.player2Stun = true;
             StartCoroutine(KnockbackB2());
         }
+        
+        if (!hasPlayedHighBlue || !hasPlayedHighRed)
+        {
+            if (managerScript.player1Health == 2)
+            {
+                damageHitHighSource.Play();
+                hasPlayedHighBlue = true;
+            }
+
+            if (managerScript.player2Health == 2)
+            {
+                damageHitHighSource.Play();
+                hasPlayedHighRed = true;
+            }
+        }
+
+        if (!hasPlayedMidBlue || !hasPlayedMidRed)
+        {
+            if (managerScript.player1Health == 1)
+            {
+                damageHitMidSource.Play();
+                hasPlayedMidBlue = true;
+            }
+
+            if (managerScript.player2Health == 1)
+            {
+                damageHitMidSource.Play();
+                hasPlayedMidRed = true;
+            }
+        }
+
+        if (!hasPlayedLowBlue || !hasPlayedLowRed)
+        {
+            if (managerScript.player1Health == 0)
+            {
+                damageHitLowSource.Play();
+                hasPlayedLowBlue = true;
+            }
+
+            if (managerScript.player2Health == 0)
+            {
+                damageHitLowSource.Play();
+                hasPlayedLowRed = true;
+            }
+        }
+
+        if (managerScript.player1Health == 1 && !hasPlayedHighBlue || managerScript.player1Health == 1 && !hasPlayedHighRed)
+        {
+            damageHitMidSource.Play();
+        }
+
+        if (managerScript.player1Health == 0 && !hasPlayedHighBlue || managerScript.player1Health == 0 && !hasPlayedHighRed)
+        {
+            damageHitLowSource.Play();
+        }
+
         // The following two if statements check if either player is dead, triggering a Game Over.
         if (managerScript.player1Health == 0)
         {
