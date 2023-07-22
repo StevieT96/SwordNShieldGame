@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public GameObject gameUIObject;
+    public GameObject pauseBackground;
     public GameObject pauseScreenObject;
+    public GameObject settingsMenuObject;
 
     public bool menuOpen;
     
@@ -15,7 +18,9 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         gameUIObject.SetActive(true);
+        pauseBackground.SetActive(false);
         pauseScreenObject.SetActive(false);
+        settingsMenuObject.SetActive(false);
     }
 
     void Update()
@@ -26,21 +31,39 @@ public class PauseMenu : MonoBehaviour
             {
                 menuOpen = true;
                 gameUIObject.SetActive(false);
+                pauseBackground.SetActive(true);
                 pauseScreenObject.SetActive(true);
                 Time.timeScale = 0f;
                 audioMixer.SetFloat("MusicLowpass", 875.00f);
-
-                //To Do: Disable all player input during pause (by adding if !menuOpen to input conditional statements)
             }
 
             else
             {
-                menuOpen = false;
-                gameUIObject.SetActive(true);
-                pauseScreenObject.SetActive(false);
-                Time.timeScale = 1f;
-                audioMixer.SetFloat("MusicLowpass", 22000.00f);
+                ResumeGame();
             }
         }
+    }
+
+    public void SettingsMenuOpen()
+    {
+        pauseScreenObject.SetActive(false);
+        settingsMenuObject.SetActive(true);
+    }
+
+    public void SettingsMenuClose()
+    {
+        pauseScreenObject.SetActive(true);
+        settingsMenuObject.SetActive(false);
+    }
+
+    public void ResumeGame()
+    {
+        menuOpen = false;
+        gameUIObject.SetActive(true);
+        pauseBackground.SetActive(false);
+        pauseScreenObject.SetActive(false);
+        settingsMenuObject.SetActive(false);
+        Time.timeScale = 1f;
+        audioMixer.SetFloat("MusicLowpass", 22000.00f);
     }
 }
