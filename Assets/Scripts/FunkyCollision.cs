@@ -9,7 +9,6 @@ using UnityEngine.SocialPlatforms.Impl;
 public class FunkyCollision : MonoBehaviour
 {
     public GameObject gameManager;
-    public GameObject respectiveSwordObject;
     private GameManager managerScript;
 
     public GameObject sword1;
@@ -87,8 +86,6 @@ public class FunkyCollision : MonoBehaviour
             managerScript.roundActive = false;
             managerScript.gameOver = true;
         }
-
-        respectiveSwordObject.GetComponent<CollisionSword1>().PlayHitSoundCheck();
     }
     //The following IEnumerators are all knockback and stun timing sequences for the various checks performed above.
     IEnumerator KnockbackS()

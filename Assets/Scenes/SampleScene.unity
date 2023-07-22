@@ -607,7 +607,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &96293670
 GameObject:
@@ -2589,7 +2589,7 @@ RectTransform:
   - {fileID: 1738492489}
   - {fileID: 913380300}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2644,7 +2644,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1576817180599446217, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b8e1a476ea0258648b5aac02e97b18d6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 11f9cbdb76e232648b780881d81e14b5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2740,7 +2740,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1576817180599446217, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
-  m_audioClip: {fileID: 8300000, guid: bb7b7fa9fc8f10c4a92bc3488bf39a20, type: 3}
+  m_audioClip: {fileID: 8300000, guid: da20f7303c3d9654c84ef17744867f46, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2836,7 +2836,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1576817180599446217, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 5065daae2b1e2b2449d81b7894346af4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a29ad70706c7db549b4e2934222c99e0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2932,7 +2932,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1576817180599446217, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 7320d4e59e932d04791b3dd9abb14e13, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1a427ad480ca00d4cacecded672d2a59, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3028,7 +3028,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1576817180599446217, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 6047505c92a33b84080dfcc9dd81509a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5a05429c7fdee2a439d61747a03a5e41, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3124,7 +3124,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1576817180599446217, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
-  m_audioClip: {fileID: 8300000, guid: beecc743f694a1e4aa4c79e500a3befa, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 96654d30a8963244b96409c6571b7bc0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3339,7 +3339,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1576817180599446217, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b8e1a476ea0258648b5aac02e97b18d6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 11f9cbdb76e232648b780881d81e14b5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3450,7 +3450,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1576817180599446217, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
-  m_audioClip: {fileID: 8300000, guid: bb7b7fa9fc8f10c4a92bc3488bf39a20, type: 3}
+  m_audioClip: {fileID: 8300000, guid: da20f7303c3d9654c84ef17744867f46, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3546,7 +3546,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1576817180599446217, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 5065daae2b1e2b2449d81b7894346af4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a29ad70706c7db549b4e2934222c99e0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3642,7 +3642,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1576817180599446217, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 7320d4e59e932d04791b3dd9abb14e13, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1a427ad480ca00d4cacecded672d2a59, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3738,7 +3738,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1576817180599446217, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 6047505c92a33b84080dfcc9dd81509a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5a05429c7fdee2a439d61747a03a5e41, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3834,7 +3834,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1576817180599446217, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
-  m_audioClip: {fileID: 8300000, guid: beecc743f694a1e4aa4c79e500a3befa, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 96654d30a8963244b96409c6571b7bc0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -7468,7 +7468,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -1576817180599446217, guid: 31b58a1e5d315f347a56be0adac51637, type: 2}
   m_audioClip: {fileID: 8300000, guid: 99e139b55e57a5c4f8a523a1437b5511, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.79
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9031,7 +9031,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1328473090}
-  respectiveSwordObject: {fileID: 0}
   sword1: {fileID: 4713421900592389647}
   sword2: {fileID: 1207438051}
   player1: {fileID: 1723652319}
@@ -13979,7 +13978,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2116640091
 GameObject:
@@ -14247,7 +14246,7 @@ Transform:
   - {fileID: 1572247208369821940}
   - {fileID: 664034014}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1572247209746845673
 CharacterController:
@@ -14436,7 +14435,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1328473090}
-  respectiveSwordObject: {fileID: 0}
   sword1: {fileID: 4713421900592389647}
   sword2: {fileID: 1207438051}
   player1: {fileID: 1723652319}
